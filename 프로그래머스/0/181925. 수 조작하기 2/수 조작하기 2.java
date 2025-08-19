@@ -1,19 +1,20 @@
 class Solution {
     public String solution(int[] numLog) {
-        String answer = "";
+        StringBuilder sb = new StringBuilder();
+
         for (int i = 0; i < (numLog.length - 1); i++) {
             int log = numLog[i + 1] - numLog[i];
             switch(log) {
-                case 1: answer+="w";
+                case 1: sb.append("w");
                     break;
-                case -1: answer+="s";
+                case -1: sb.append("s");
                     break;
-                case 10: answer+="d";
+                case 10: sb.append("d");
                     break;
-                case -10: answer+="a";
+                case -10: sb.append("a");
                     break;
             }  
         }
-        return answer;
+        return sb.toString();
     }
 }
