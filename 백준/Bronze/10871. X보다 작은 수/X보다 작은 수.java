@@ -1,29 +1,26 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        //정수n개로 이루어진 배열, 정수x
-        //배열에 숫자 받아 넣기
+        String[] input1 = br.readLine().split(" ");
+        int n = Integer.parseInt(input1[0]);
+        int x = Integer.parseInt(input1[1]);
 
-        //x보다 작은 배열 수 찾기
-        //배열 출력
+        String[] input2 = br.readLine().split(" ");
 
-        int n = sc.nextInt();
-        int x = sc.nextInt();
-        int[] arr = new int[n];
-//         ArrayList<Integer> printArr = new ArrayList<>();
-
+        String result = "";
 
         for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
-            }
-        for (int i = 0; i < n; i++) {
-            if (arr[i] < x) {
-                System.out.print(arr[i] + " ");
+            int temp = Integer.parseInt(input2[i]);
+            if (temp < x) {
+                result += temp + "" + " ";
             }
         }
-        }
+        bw.write(result);
+        bw.flush();
+
     }
+}
